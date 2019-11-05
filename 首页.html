@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+    
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <script src="lib/js/jquery-1.11.3.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+
+<style>
+@font-face{
+	font-family:myFristFont;
+	src:url(font%EF%BC%88%E8%8B%B1%EF%BC%89/grapesoda.ttf);
+	}
+@font-face{
+	font-family:myLastFont;
+	src:url(font%EF%BC%88%E8%8B%B1%EF%BC%89/font%EF%BC%88%E4%B8%AD%EF%BC%89/%E3%80%90%E5%BC%80%E5%BC%80%E3%80%91%E6%99%9A%E5%AE%89%E4%BD%93.ttf);
+	}
+	
+@font-face{
+	font-family:myFont;
+	src:url(font%EF%BC%88%E8%8B%B1%EF%BC%89/font%EF%BC%88%E4%B8%AD%EF%BC%89/%E7%AB%A5%E5%8D%A1.ttf);
+	}
+body,ul,li{margin:0;padding:0;}
+html,body{height:100%;}
+body{font:16px/1.5 Tahoma;color:#FFF;background:#D1D1D1;
+}
+li{list-style-type:none;}
+a:link,a:visited{text-decoration:none;}
+a:hover{text-decoration:underline;}
+#outer{width:470px;margin:0 auto;overflow:hidden;zoom:1;}
+#skin,#nav{overflow:hidden;zoom:1;}
+#skin{margin:10px 0;}
+#skin li{float:left;width:6px;height:6px;cursor:pointer;overflow:hidden;margin-right:10px;text-indent:-9999px;border-width:14px;border-style:solid;}
+#skin li.current{background:#fff!important;}
+#red{border-color:red;background:red;}
+#green{border-color:green;background:green;}
+#black{border-color:black;background:black;}
+#nav{border:1px solid #fff;background-color:green;font-size:}
+#nav li{line-height:25px;border-left:1px solid #fff;}
+#nav li a{color:#fff;}
+#nav li a:hover{
+	background-color:#FF4D4D;
+	}
+	
+
+
+#div1{
+	position:relative;
+	top:100px;
+	}
+
+#div1 ul{
+	list-style-type : none;
+	margin-right:50px;
+	
+	}
+#div1 ul li{
+	float:left;
+	margin-left:20px;
+	}
+	
+
+#div1  ul ul{
+margin-top: 3px;
+padding: 0;
+list-style-type:none;
+background:#FFFF00;
+border:1px solid  #000000;
+width:85px;
+display:none;
+position:absolute;}
+
+#div1  ul ul li{
+text-align:center;
+line-height:30px;
+}
+
+
+
+#waring{
+	width:400px;
+	border:2px solid #CCC;
+	display:none;
+	position:absolute;
+	top:50px;
+	right:40px;
+	
+	}
+	
+
+ strong{
+	font-size:18px;
+	}
+#posi{
+	position:relative;
+	top:-34px;
+	left:-223px;
+	color:#000;
+	}
+
+#calendar{width:330px;overflow:hidden;zoom:1;background:#eaeaea;margin:10px auto;padding:0 0 10px 10px;position:fixed;right:400px;top:50px;z-index:1px;display:none;  }
+#calendar ul{overflow:hidden;zoom:1;}
+#calendar li{color:#fff;float:left;width:55px;height:55px;cursor:pointer;font-size:14px;text-align:center;background:#424242;line-height:1.3;list-style-type:none;border:1px solid #424242;margin:10px 10px 0 0px;padding:5px;}
+#calendar li.current{color:#F69;background:#fff;}
+#calendar li strong{display:block;font-size:18px;}
+#msg{color:#666;background:#f1f1f1;border:1px solid #fff;margin:10px 10px 0 0;padding:5px;}
+#msg h2{font-size:14px;}
+#day{
+	position:relative;
+	top:33.5px;
+	left:-115px;
+	}
+
+	
+	
+#clock{width:250px;text-align:center;background:#1a1a1a;padding:20px 0;position:absolute;right:70px;top:20px;}
+#clock span{color:#000;width:50px;line-height:2;background:#fbfbfb;border:2px solid #b4b4b4;margin:0 10px;padding:0 10px;}
+
+
+#aa{
+	position:relative;
+	left:-30px;}
+#bb{
+	z-index:50px;}
+#oimg{
+	margin-top:175px;
+	
+	}
+.carousel-inner{
+	margin-left:30px;}
+	
+.img1{
+	width:350px;
+	height:220px;
+	}
+.img2{
+	width:440px;
+	height:267px;
+	}
+.img3{
+	width:260px;
+	height:390px;
+	}
+.Tiele{
+	margin:100px 0 50px 0;
+	font-family:myFristFont;
+	font-size:50px;
+	}
+#Br{
+	margin-top:100px;
+	}
+	
+h3{
+	font-family:myLastFont;
+	font-size:30px;
+	font-weight:600;
+	margin-right:60px;}
+
+p{
+	font-family:myFont;
+	
+	}
+p2{
+	font-family:myFont;
+	font-size:24px;
+	
+	}
+
+
+</style>
+</head>
+
+<body>
+   <!--head部分-->
+   <div class="row">
+       <!--换肤、胶囊导航栏-->
+      <div class="col-md-8">
+           <div id="outer">
+               <ul id="skin">
+                 <li id="red" title="红色" style="width:6px;height:6px;background:#FFF;">红</li>
+                 <li id="green" class="current" title="绿色">绿</li>
+                 <li id="black" title="黑色">黑</li>
+               </ul>
+    
+               <ul  id="nav" class="nav  nav-pills">
+                  <li><a href="首页.html">首页</a></li>
+                  <li><a href="基本信息.html">基本信息</a></li>
+                  <li><a href="2D画廊.html">画廊幻灯片</a></li>
+                  <li><a href="美照展示.html">畅畅美照</a></li>
+                  <li><a href="I LOVE YOU效果（动态版，JS）.html">畅迷心声</a></li>
+              </ul>
+           </div>  
+      </div>
+    
+      <!--注册、联系方式、年历-->
+    <div class="col-md-4">
+<!--系统时间-->
+<div id="clock">
+ <span></span>点<span></span>分<span></span>秒
+</div>
+
+
+
+<!--简易年历-->
+ 
+            <div id="calendar">
+                <ul>
+                     <li><strong>1</strong>JAN</li>
+                     <li><strong>2</strong>FER</li>
+                     <li><strong>3</strong>MAR</li>
+                     <button type="button" class="close" id="close" >&times;</button>
+                     <li><strong>4</strong>APR</li>
+                     <li><strong>5</strong>MAY</li>
+                     <li class="current"><strong>6</strong>JUN</li>
+                     <li><strong>7</strong>JUL</li>
+                     <li><strong>8</strong>AUG</li>
+                     <li><strong>9</strong>SEP</li>
+                     <li><strong>10</strong>OCT</li>
+                     <li><strong>11</strong>NOV</li>
+                     <li><strong>12</strong>DEC</li>
+               </ul>
+            <div id="msg">
+               <h2>
+                  <strong>6</strong>
+                       月节日
+               </h2>
+               <p>端午节：6月4日至6日放假3天。</p>
+            </div>
+       </div> 
+<!--右侧小导航栏-->
+<div id="div1" class="pull-right">
+        
+      
+        <a href="#" class="btn btn-success" id="day">简易年历</a>
+        
+    
+<!--联系方式-->          
+        <ul>
+           <div class="btn-group">
+           <li  id="aa"><a href="#" class="btn btn-primary" id="cc">联系方式</a>
+              <ul id="bb">
+                 <li><a href="#">@我</a></li>
+                 <li><a href="#">客服</a></li>
+                 <li><a href="#">微博</a></li>
+              </ul>
+           </li>
+           </div>
+        </ul> 
+       
+<!--用户注册-->
+<div id="posi">
+
+<button class="btn btn-info" data-toggle="modal" data-target="#roleReg">用户注册</button>
+ 
+  <div class="modal fade" id="roleReg">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div  class="modal-header">
+          <button type="button" class="close"  data-dismiss="modal" aria-hodden="true">&times;</button>
+          <h4 class="modal-title" id="myModal">新用户注册</h4>
+        </div>
+        
+        
+        <div class="modal-body">
+           <form class="form-horizontal" role="form">
+             <div class="form-group">
+               <label class="col-sm-2 control-label" >手机号</label>
+               <div class="col-sm-6">
+                 <input type="text" class="form-control" id="number" placeholder="电话号码">
+               </div>
+             </div>
+             
+             <div class="form-group">
+               <label class="col-sm-2 control-label" >用户名</label>
+               <div class="col-sm-6">
+                 <input type="text"  class="form-control" id="user" placeholder="用户名">
+               </div>
+             </div>
+             
+             <div class="form-group">
+               <label class="col-sm-2 control-label" >密码</label>
+               <div class="col-sm-6">
+                 <input type="text" class="form-control" id="passworld" placeholder="由数字、字母组成，至少6位">
+               </div>
+             </div>
+             
+           </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button id="conserve" type="button" class="btn btn-primary" data-dismiss="modal" >保存</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+<!--密码输入错误警告提示-->
+<div class="alert alert-danger" id="waring">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>你的输入不合法!</strong><br/><br/>
+  <p>1、用户名已存在</p>
+  <p>2、密码请输入字母、数字，至少6位</p>
+</div>
+
+</div></div>
+     
+   </div>
+</div>
+<!------------------------------------------------------------------->   
+   
+   <!--轮播-->
+<div class="row" id="oimg">
+                           
+      <div data-ride="carousel" class="carousel slide" id="carousel-container">
+            
+            <!--图片容器-->
+             
+             
+          <div class="carousel-inner"> 
+            <!---初始小界面1-->
+            <div class="item active">
+             <div class="text-center">
+                   <h2 class="Tiele">Jennifer  blog</h2>
+             </div> 
+               <div class="row">
+                 
+                  <div class="col-md-4" id="col4"  >
+                    <img class="img1" src="img/首1.jpg">  
+                    <h3>喜欢旅游<br/>每次拍完戏期间可能会顺便去法国感受罗曼蒂克、去马尔代夫感受海边风情</h3>             </div>
+                    
+                  <div class="col-md-4" >
+                    <img class="img1" src="img/首2.jpg">  
+                    <h3>喜欢自拍喜欢花痴......</h3>             
+                  </div>
+                    
+                  <div class="col-md-4" >
+                    <img class="img1" src="img/首3.jpg">  
+                    <h3>喜欢看书<br/>喜欢从字里行间去感受另一个世界</h3>             </div>
+                    
+               </div>
+             </div>
+           
+           <!---初始小界面2-->
+                 <div class="item">
+                     <h2 class="Tiele"></h2>
+                        <div class="row">
+                             <div class="col-md-4">
+                                <h3>演戏有天赋、有灵气、特别走心<h3>
+                                <p2>无论古装还是现代扮相都堪称完美</p2>
+                             </div>
+                             
+                             <div class="col-md-4">
+                               <img class="img3" src="img/首6.jpg"><br/>
+                                 <p2>温婉善良、一世倾城的雪倾城</p2>
+                             </div>
+                              <div class="col-md-4"><img class="img3" src="img/首5.jpg"><br/>
+                                 <p2>优雅、知性的戚嘉</p2>
+                             </div>
+                        </div>
+                        
+                 </div>
+             
+             
+           <!---初始小界面3-->  
+          <div class="item">
+                    <div id="Br"></div> 
+             <div class="row">
+                 <div class="col-md-6">
+                    <h3>时光这把杀猪刀真是拿她没有一点办法<br>———舒畅 仙气女神<h3>
+                    
+                 </div>
+                 <div class="col-md-6"><img class="img2" src="img/首4.jpg"></div>
+             </div>
+              
+          </div>
+          
+          
+          
+             
+            
+       </div>
+           
+          
+       
+            <!--左右控制按钮-->
+                 <a data-slide="prev" href="#carousel-container" class="left carousel-control">
+                     <span class="glyphicon glyphicon-chevron-left"></sapn>
+                 </a>
+      
+                 <a data-slide="next" href="#carousel-container" class="right carousel-control">
+                     <span class="glyphicon glyphicon-chevron-right"></sapn>
+                </a>
+         </div>
+</div>
+   <!--隔空-->
+<div id="Br">
+   
+</div>                       
+
+
+<script>
+window.onload = function ()
+{
+	
+	var oSkin = document.getElementById("skin");
+	var oLi=oSkin.getElementsByTagName("li");
+	var oNav=document.getElementById("nav");
+	var oBody=document.body;
+	
+	
+	oLi[0].onclick=function (){
+		oBody.style.backgroundColor='#F99';
+		oNav.style.backgroundColor='red';
+		}
+		
+	oLi[1].onclick=function (){
+		oBody.style.backgroundColor='#A3C5A8';
+		oNav.style.backgroundColor='green';
+		}
+		
+	oLi[2].onclick=function (){
+		oBody.style.backgroundColor='#D1D1D1';
+		oNav.style.backgroundColor='black';
+		}
+	
+	/*for(var i = 0; i< oSkin.length; i++)
+	{		
+		oSkin[i].onclick = function ()
+		{
+			for(var p in oSkin) oSkin[p].className = "";
+			this.className = "current";
+			oLink['href'] = "cssHTML/"+this.id + ".css";				
+		}	
+	}
+	*/
+	<!--弹出警告框-->
+	var oCon=document.getElementById("conserve");
+	var oWar=document.getElementById("waring");
+	oCon.onclick=function() {
+		oWar.style.display='block';
+		}
+	
+	
+	//获取与联系方式有关元素
+     var aaa= document.getElementById('aa');
+     var bbb=document.getElementById('bb');
+     var ccc=document.getElementById('cc');
+ 
+  //移入出现联系方式
+  aaa.onmouseover=function abc(){
+     bbb.style.display='block';
+	 ccc.style.background='#66FF66';
+ 
+ }
+ 
+ //移出恢复
+  bbb.onmouseout=function   show(){
+     bbb.style.display='none';
+	 ccc.style.background='#337ab7';
+ }
+ 
+ 
+ //简易JS年历
+    var oClose=document.getElementById("close");
+    var oDay=document.getElementById("day");
+    var oLi = document.getElementById("calendar").getElementsByTagName("li");
+	var oMsg = document.getElementById("msg");
+	var oP = oMsg.getElementsByTagName("p")[0];
+	var oStrong = oMsg.getElementsByTagName("strong")[0];
+	var oArray = [
+		"元旦：1月1日至3日放假三天。",
+		"春节：2月2日至8日放假7天。",
+		"妇女节：3月8日妇女节，与我无关。",
+		"清明节：4月3日至5日放假3天",
+		"劳动节：4月30日至5月2日放假3天。",
+		"端午节：6月4日至6日放假3天。",
+		"小暑：7月7日小暑。不放假。",
+		"七夕节：8月6日七夕节。不放假。",
+		"中秋节：9月10日至12日放假3天。",
+		"国庆节：10月1日至7日放假7天。",
+		"立冬：11月8日立冬。不放假。",
+		"艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+	];
+	for(var i = 0; i < oLi.length; i++)
+	{
+		oLi[i].index = i;
+		oLi[i].onmouseover = function ()
+		{
+			for(var n = 0; n < oLi.length; n++) oLi[n].className = "";
+			this.className = "current";
+			oP.innerHTML = oArray[this.index];
+			oStrong.innerHTML = this.index + 1;
+		}	
+	}	
+	//点击按钮后显示年历
+    oDay.onclick=function (){
+		document.getElementById("calendar").style.display='block';
+		}
+	//	
+	oClose.onclick=function (){
+		document.getElementById("calendar").style.display='none';
+		}
+		
+  
+  //获取系统时间
+  var oClock = document.getElementById("clock");	
+	var aSpan = oClock.getElementsByTagName("span");
+		
+	setInterval(getTimes, 1000);
+	getTimes();
+	function getTimes ()
+	{
+		var oDate = new Date();
+		var aDate = [oDate.getHours(), oDate.getMinutes(), oDate.getSeconds()];
+		for (var i in aDate) aSpan[i].innerHTML = format(aDate[i])
+	}
+	function format(a)
+	{
+		return a.toString().replace(/^(\d)$/, "0$1")	
+	}
+	
+	
+	
+};
+</script>
+</body>
+</html>

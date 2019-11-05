@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>畅迷心声</title>
+
+
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+		<script src="lib/js/jquery-1.11.3.min.js"></script>
+		<script src="lib/js/bootstrap.min.js"></script>
+
+		<style>
+			@font-face{
+	font-family:myLastFont;
+	src:url(font%EF%BC%88%E8%8B%B1%EF%BC%8k9/font%EF%BC%88%E4%B8%AD%EF%BC%89/%E3%80%90%E5%BC%80%E5%BC%80%E3%80%91%E6%99%9A%E5%AE%89%E4%BD%93.ttf);
+	}
+	
+@font-face{
+	font-family:myFont;
+	src:url(font%EF%BC%88%E8%8B%B1%EF%BC%89/font%EF%BC%88%E4%B8%AD%EF%BC%89/%E7%AB%A5%E5%8D%A1.ttf);
+	}
+*{
+	margin:0px;
+	padding:0px;
+	}
+#con{
+	width:800px;
+	height:647px;
+	margin:10px auto;
+	background-color:#eaeaea;
+	}
+#con ul{
+	list-style:none;}
+#content{
+	width:1100px;
+	height:300px;
+	margin:50px  auto;
+	background-color:#CCC;
+	position:relative;
+	top:20px;
+	margin-right:100px;
+	}
+	
+
+ul{
+	
+	float:left;
+	
+	
+	}
+#content ul li{
+	list-style:none;
+	width:30px;
+	height:30px;
+	margin-top:20px;
+	margin-left:5px;
+	
+	}
+ul  li.clear{
+	background-color:#CCC!important;}
+.disp{
+	background-color:#FFF;}
+
+#Biv1{
+	display:block;
+	position:relative;
+    left:50px;
+	top:250px;
+	}
+#text{
+	width:200px;
+	height:220px;
+	border:2px solid #0F0;
+	text-align:center;
+	padding:8px;
+	position:absolute;
+	left:50px;
+	top:50px;}
+
+#love li img{opacity:0.0;cursor:crosshair;filter:alpha(opacity=0);transition-property:opacity;transition-duration:5s;}
+#love li.current img{opacity:1;filter:alpha(opacity=100);}
+
+
+
+body{font:16px/1.5 Tahoma;color:#000;
+}
+li{list-style-type:none;}
+a:link,a:visited{text-decoration:none;}
+a:hover{text-decoration:underline;}
+#outer{width:470px;margin:0 auto;overflow:hidden;zoom:1;}
+#skin,#nav{overflow:hidden;zoom:1;}
+#skin{margin:10px 0;}
+#skin li{float:left;width:6px;height:6px;cursor:pointer;overflow:hidden;margin-right:10px;text-indent:-9999px;border-width:14px;border-style:solid;}
+#skin li.current{background:#fff!important;}
+#red{border-color:red;background:red;}
+#green{border-color:green;background:green;}
+#black{border-color:black;background:black;}
+#nav{border:1px solid #fff;background-color:green;font-size:}
+#nav li{line-height:25px;border-left:1px solid #fff;}
+#nav li a{color:#fff;}
+#nav li a:hover{
+	background-color:#FF4D4D;
+	}
+#jum{
+	background:#FFF;}
+	
+	
+
+video{
+	
+	position:relative;
+	float:right;
+	margin:40px 50px 50px 100px;
+	
+	}
+#colText h3{
+	font-family:myLastFont;
+	text-align:center;
+	}
+#colText{
+	
+	margin:10px 50px 10px 60px;
+	}
+	
+#colText p{
+text-indent:25px;
+margin:10px 0;
+}
+</style>
+	</head>
+
+	<body>
+		<!--换肤、胶囊导航栏-->
+		<div class="container">
+			<div class="jumbotron" id="jum">
+				<div id="outer">
+					<ul id="skin">
+						<li id="red" title="红色" style="width:6px;height:6px;background:#FFF;">红</li>
+						<li id="green" class="current" title="绿色">绿</li>
+						<li id="black" title="黑色">黑</li>
+					</ul>
+
+					<ul id="nav" class="nav  nav-pills">
+						<li><a href="首页.html">首页</a></li>
+						<li><a href="基本信息.html">基本信息</a></li>
+						<li><a href="2D画廊.html">画廊幻灯片</a></li>
+						<li><a href="美照展示.html">畅畅美照</a></li>
+						<li><a href="I LOVE YOU效果（动态版，JS）.html">畅迷心声</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!--橡皮檫爱心畅畅-->
+		<div id="con">
+			<ul id="love">
+				<li><img src="img/爱心畅畅.jpg" style="position:absolute;"></li>
+			</ul>
+		</div>
+
+		<!--为什么喜欢畅畅原因-->
+		<div id="text">
+			<strong></strong>
+		</div>
+
+
+		<!--点击按钮li一个一个出现，直到li完全出现完，显示红色的I LOVE YOU 形状，并且再次移动到上面有闪烁效果-->
+		<div class="row">
+			<div class="col-md-2">
+				<div id="Biv1">
+					<button id="btn" type="button" class="btn btn-primary"><em>点我，点我！</em></button>
+				</div>
+			</div>
+
+
+			<div class="col-md-10">
+				<div id="content">
+					<span id="pic1">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</span>
+
+
+					<span id="pic2">
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li></li>
+						</ul>
+					</span>
+
+
+					<span id="pic3">
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li class="clear"></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</span>
+
+					<span id="pic4">
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li class="clear"></li>
+							<li></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li class="clear"></li>
+							<li></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+					</span>
+
+					<span id="pic5">
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li class="clear"></li>
+							<li></li>
+						</ul>
+					</span>
+
+					<span id="pic6">
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li class="clear"></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+					</span>
+
+
+					<span id="pic7">
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li class="clear"></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</span>
+
+					<span id="pic8">
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li class="clear"></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li class="clear"></li>
+							<li class="clear"></li>
+							<li></li>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</span>
+
+
+
+				</div>
+			</div>
+			<!--表白+添加视频-->
+
+			<video src='video/八妹.mp4' controls="controls"></video>
+			</video>
+			<div id="colText">
+				<h3>生活绝对不会辜负每一个努力想要变好的人</h3>
+				<p>畅畅，最近看了你在《演员的诞生--平行线》的表演。
+					看着畅畅你饰演的春生妻子亲耳从丈夫口中知道自己那么深爱着的丈夫出轨的时候，那种难过的表情和颤抖得说不出话的语气。
+					我好心疼啊！
+					多么想替你分担那些你负担不起但又不得不去负担的痛苦。
+					相信每一个观众都能体会到身体被撕裂的难受感觉。
+					突然让我想起你的很多角色，那些让你感到非常痛苦的经历。
+					还记得《宝莲灯》里小玉被沉香第二次伤害的酒醉，用酒一点点的洒在伤口上，脑海中全都是一幕幕与心上人沉香一起度过美好回忆，眼泪哗啦啦往下掉的那个痛不欲生的表情和眼神，那个情境让我至今印象深刻。
+					还记得《孝庄秘史》里宛如痛失爱子，抱着自己几个月孩子的尸体，嘴里神神叨叨一些让人感觉到绝望和窒息的话，那种痛苦，最后那种绝望到快要疯了的的丧子之痛通过嚎哭发泄出来。
+
+					还记得《烽火佳人》里你抱着几个月大重感冒的孩子四处求救，但被那些恶人冷嘲热讽，甚至棍棒相加，在暴雨中你孩子没能躲过命运。你在雨中的无奈、凄凉、哭嚎；还有最近前年《大唐荣耀》在下着暴雨的雨夜，抱着为自己而死的李倓痛哭心碎的表情和嚎叫；这样让我感动的情景太多太多......或喜或悲。<br />
+					我并不是一个感性的男生，相反我很喜欢多问为什么？
+					但这些角色的这些经历却赚足了我的眼泪。
+					每一个你的角色，我都尝试着站在你的角色角度去感受她的经历是什么样的？感受是什么？你笑，我也很开心的笑。你哭时，我也感同身受，你可知道，我这一年中一半的眼泪都是为你的喜怒哀乐所流下的。
+
+
+				</p>
+				<p></p>
+				<p>始于演技，陷于颜值，忠于人品。我就是这么喜欢上你的，小时候其实已经看了你的很多作品，《宝莲灯》里单纯善良、爱哭的小玉，《魔幻手机》里忠诚、神通广大的傻妞，《精卫填海》里漂亮的神仙姐姐，可惜当时太小，只觉得自己很喜欢这些漂亮姐姐的角色，但是没有深入了解背后的你是一个什么样的人，当我去年再次以欣赏的眼光去感受《孝庄秘史》里宛如这个角色，去感受、体验她给我的感受，我被这个秀丽端庄，漂亮，聪明，温柔，安静的形象深深吸引了，接下来的一段时间了，我疯狂的在网上寻找有关于你的一切信息，百度百科、你从10年开通到现在的微博、你17岁到21岁大学期间写的将近900篇的日志博文、你所有的访谈视频、你演过的电视剧剪辑、你参加过的所有综艺节目、你的所有的采访、电视剧宣传、每一张美照等等，利用网络找到所有能了解到你的一切........，我课余时间几乎全部用来了解你是一个什么样的人，当我认认真真的、安安静静的欣赏你的一切，解决了心中一个又一个问题，我像一个极度渴望知识的高中学子，在这一年多时间里用几万字的笔记试着去了解你的一切一切，将你的所有信息分类、再分门别类的总结一套方法模式去欣赏你的一切信息，
+					只为了能记住你的一切，我都快成为一名研究你的“专家”了。</p>
+				<p>愈了解你，就越是喜欢你，因为理由实在是太多太多。至于最关键的问题，我为什么喜欢你，在寻找这个答案的过程中我的内心逐渐充盈，对未来充满了憧憬期待，每次想到世界上还有一个叫舒畅的女孩，我的心里都会莫名的有开心、快乐的舒服感觉，也许这就是幸福的感觉吧，关于你，
+					我喜欢你精湛的演技：塑造了那么多经典、深入我心的角色。
+
+					我喜欢你的为人：品学兼优，聪明，真实，真诚，善良，有爱心，
+					独立（生活上、经济上、思想上），懂事，坚强，谨慎，乐观开朗，敬业，多才多艺，低调不炒作，有一颗热爱生活、善于感受的心。你的优点实在太多太多，并且每一个都经得起考验，有对应的事实证明，你是要拿这些来问我，你得神采奕奕的跟你侃上三天三夜，从她的出生说到现在一直的经历。
+					我喜欢你的形象：
+					温顺，端庄优雅，有气质，长得漂亮。
+					声音特别好听，轻盈、亲切、甜美，想草原上一阵微风拂过心头的那种感觉。
+					笑容甜美，很亲切。目光清澈明亮，温柔，充满笑意，亲切。
+					你的真实访谈，你的文字给我很多启发。还记得你20岁左右上的一个访谈节目，当主持人问你对于妈妈的印象，（舒畅10岁妈妈因病去世了）你说过从小很妈妈相依为命
+
+					我还记得她给我讲:人的一生有快乐也有悲伤，但是无论怎样，你都要热爱生活，你要从容淡定，宠辱不惊，要乐观开朗的成长，不管有多么大的困难，都会过去，都会雨过天晴。
+					那时的感受是畅畅真是一个很聪明、很用心生活、听话，懂事的孩子，几岁时妈妈对自己说的话竟然还记得，自己差远了。
+					还记得你微博写过：我希望任何人都喜欢我，所有我对任何人都好。
+					类似这样这样温情的话太多太多，教会了很多为人处事的态度。
+
+					让我重新在心里一遍又一遍的问自己：人活着到底是为了什么？我的心里逐渐明敞，感到平和、踏实，不再胡思乱想、浮躁，有坚持学习的执行力，虽然有时候被其它乱七八糟的事情干扰了注意力，犯了错误，偏离了自己预定的轨道，不断的陷入自责当中，很痛苦、自卑。但当我重新翻开你的东西，内心又开始平静，又开始积极主动的学习、生活。有时候真是希望像傻妞那样有种穿越时空的力量，这样就可以回到你的那个年代，重新投胎，以一个朋友的身份陪伴你度过你人生中最美好的学生生涯，未来的生活中各个阶段，我都希望能陪在你身边，为此，我幻想过太多太多，在这里就不一一啰嗦了，反正都是特别美好的事情。
+					对你的了解愈多、愈深，就越是无法自拔，真的总结起来就是这几个字。
+					喜欢你,
+					始于演技,
+					陷于颜值,
+					忠于人品,
+					你的过去,
+					我未能参与,
+					你的未来,
+					我必将陪你.
+					-----一枚爱你的畅迷</p>
+			</div>
+
+
+
+
+			<script>
+				window.onload = function() {
+					<!--换肤-->
+					var oSkin = document.getElementById("skin");
+					var oLi = oSkin.getElementsByTagName("li");
+					var oNav = document.getElementById("nav");
+					var oBody = document.body;
+					var oJum = document.getElementById("jum");
+
+
+					oLi[0].onclick = function() {
+						oBody.style.backgroundColor = '#F99';
+						oNav.style.backgroundColor = 'red';
+						oJum.style.backgroundColor = '#F99';
+					}
+
+					oLi[1].onclick = function() {
+						oBody.style.backgroundColor = '#A3C5A8';
+						oNav.style.backgroundColor = 'green';
+						oJum.style.backgroundColor = '#A3C5A8';
+					}
+
+					oLi[2].onclick = function() {
+						oBody.style.backgroundColor = '#D1D1D1';
+						oNav.style.backgroundColor = 'black';
+						oJum.style.backgroundColor = '#D1D1D1';
+					}
+
+
+
+					//点击按钮之后，li会一个个出现，最后有显示“I  LOVE YOU”效果
+					var oLove = document.getElementById("love").getElementsByTagName("li")[0];
+					var oDiv = document.getElementById("content");
+					var oUl = oDiv.getElementsByTagName("ul");
+					var oLi = oDiv.getElementsByTagName("li");
+					var oBtn = document.getElementById("btn");
+					var timer = null;
+					var flag=true;
+
+					var oStrong = document.getElementById("text").getElementsByTagName("strong")[0];
+					var arrText = ['喜', '欢', '你', '</br>', '始', '于', '演', '技', '</br>', '陷', '于', '颜', '值', '</br>', '忠', '于', '人',
+						'品', '</br>', '你', '的', '过', '去', '</br>', '我', '未', '能', '参', '与', '</br>', '你', '的', '未', '来', '</br>', '我',
+						'必', '将', '陪', '你'
+					];
+                     
+					
+					//橡皮擦,移入之后出现文字，
+					oLove.onmouseover = function() {
+                          if(flag){
+						this.className = 'current';
+						var m = 0;
+						var tim = null;
+
+						clearInterval(tim);
+						oStrong.innerHTML = '';
+
+						tim = setInterval(f7, 300);
+
+						function f7() {
+							oStrong.innerHTML += arrText[m];
+							m++;
+							if (m === 40) {
+								clearInterval(tim);
+							}
+						}
+						flag=null;
+						}
+					}
+					 
+					 
+					
+
+					//移出图片，取消定时器
+// 					oLove.onmouseout = function() {
+// 						clearInterval(tim);
+// 					}
+// 
+
+					//点击按钮之后，li会一个个出现，最后有显示“I  LOVE YOU”效果
+					oBtn.onclick = function f6() {
+
+						var num = 0;
+						var timer = setInterval(f1, 1000);
+
+
+						function f1() {
+							oLi[num].className = "disp";
+							num++;
+
+							if (num === 3) {
+								//oDiv.style.display="block";
+								$('li').css('background', 'red');
+								$('.clear').css('background', '#CCC');
+							}
+							return num;
+						}
+
+						/*	var b=f1();//问题;效果：li块显示完之后，num的值为93，怎么让函数f1（）返回值return 为执行完后的num=93;???
+		alert(b);
+       if(b===100){
+	   $('.a1').css('background','red');
+	    }
+	*/
+					}
+
+
+				}
+			</script>
+	</body>
+</html>

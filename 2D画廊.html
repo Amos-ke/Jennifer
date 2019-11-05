@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>2D画廊</title>
+
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+		<script src="lib/js/jquery-1.11.3.min.js"></script>
+		<script src="lib/js/bootstrap.min.js"></script>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#pic_body {
+				height: 900px;
+				background: #262626;
+				color: #FFF;
+			}
+
+			#row1 {}
+
+			#row1 ul li {
+				position:absolute;
+				list-style-type: none;
+				left: 200px;
+				top: 30px;
+		
+				
+				
+			}
+
+			#row1 img{
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: inline-block;
+				width: 150px;
+				height: 150px;
+				
+				border: 5px solid #FFF;
+				transition-duration:5s;
+				transition-property: width,left,top;
+				
+				/* display: none; */
+			}
+			
+			/* .btn:hover img{
+				width: 300px;
+			}
+			 */
+			#pic_body .btn {
+				color: #FFF;
+				border-radius: 5px;
+				background: #666;
+				box-shadow: 3px 3px 1px #888888;
+				margin: 10px 20px;
+			}
+			
+			
+			
+			#wrap{
+				position: absolute;
+				perspective: 500px;
+				margin: 100px 0px 0px 50px;
+			}
+			
+			
+			#wrap > .box{
+				position: absolute;
+				width: 400px;
+				height: 400px;
+				transition:10s ;
+				transform-style: preserve-3d;
+				transform-origin: center center -200px; 
+				
+			     }
+				 
+			#wrap > .box > div{
+				position: absolute;
+				width: 400px;
+				height: 400px;
+				transform-origin: center center -200px;
+				
+ 
+			}
+			
+			
+			#row2 img{
+				position: absolute;
+				width: 400px;
+				height: 400px;
+				/* border: white 5px solid; */
+			}
+			
+			#wrap > .box > div:nth-child(6){
+				transform: rotateX(270DEG);
+			}
+			#wrap > .box > div:nth-child(5){
+				transform: rotateX(90DEG);
+			}
+			#wrap > .box > div:nth-child(4){
+				transform: rotateY(90DEG);
+			}
+			#wrap > .box > div:nth-child(3){
+				transform: rotateY(270DEG);
+			}
+			#wrap > .box > div:nth-child(2){
+				transform: rotateY(180DEG) rotate(180DEG);
+			}
+			#wrap > .box > div:nth-child(1){
+			}
+			
+			#wrap:hover > .box{
+				transform: rotateX(360DEG);
+			}
+
+			
+
+
+
+			body {
+				font: 16px/1.5 Tahoma;
+				color: #000;
+			}
+
+			li {
+				list-style-type: none;
+			}
+
+			a:link,
+			a:visited {
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			#outer {
+				width: 470px;
+				margin: 0 auto;
+				overflow: hidden;
+				zoom: 1;
+			}
+
+			#skin,
+			#nav {
+				overflow: hidden;
+				zoom: 1;
+			}
+
+			#skin {
+				margin: 10px 0;
+			}
+
+			#skin li {
+				float: left;
+				width: 6px;
+				height: 6px;
+				cursor: pointer;
+				overflow: hidden;
+				margin-right: 10px;
+				text-indent: -9999px;
+				border-width: 14px;
+				border-style: solid;
+			}
+
+			#skin li.current {
+				background: #fff !important;
+			}
+
+			#red {
+				border-color: red;
+				background: red;
+			}
+
+			#green {
+				border-color: green;
+				background: green;
+			}
+
+			#black {
+				border-color: black;
+				background: black;
+			}
+
+			#nav {
+				border: 1px solid #fff;
+				background-color: green;
+				font-size:
+			}
+
+			#nav li {
+				line-height: 25px;
+				border-left: 1px solid #fff;
+			}
+
+			#nav li a {
+				color: #fff;
+			}
+
+			#nav li a:hover {
+				background-color: #FF4D4D;
+			}
+
+			#jum {
+				background: #FFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--换肤、胶囊导航栏-->
+		<div class="container">
+			<div class="jumbotron" id="jum">
+				<div id="outer">
+					<ul id="skin">
+						<li id="red" title="红色" style="width:6px;height:6px;background:#FFF;">红</li>
+						<li id="green" class="current" title="绿色">绿</li>
+						<li id="black" title="黑色">黑</li>
+					</ul>
+
+					<ul id="nav" class="nav  nav-pills">
+						<li><a href="首页.html">首页</a></li>
+						<li><a href="基本信息.html">基本信息</a></li>
+						<li><a href="2D画廊.html">画廊幻灯片</a></li>
+						<li><a href="美照展示.html">畅畅美照</a></li>
+						<li><a href="I LOVE YOU效果（动态版，JS）.html">畅迷心声</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!--2D画廊-->
+		<div id="pic_body">
+
+			<a href="javascript:;" class="btn" id="btn">2D画廊</a>
+			<div class="row">
+				<!--小图-->
+				<div class="col-md-6" id="row1">
+					<ul>
+						<li><img src="img/1：1/2.0.jpg" style="transform: rotate(4deg);"></li>
+						<li><img src="img/1：1/2.1.jpg" style="transform: rotate(24deg);" ></li>
+						<li><img src="img/1：1/2.2.jpg"  style="transform: rotate(-14deg);"></li>
+						<li><img src="img/1：1/2.3.jpg"  style="transform: rotate(34deg);"></li>
+						<li><img src="img/1：1/2.4.jpg"  style="transform: rotate(-20deg);"></li>
+						<li><img src="img/1：1/2.5.jpg"  style="transform: rotate(34deg);"></li>
+						<li><img src="img/1：1/2.6.jpg"  style="transform: rotate(4deg);"></li>
+					</ul>
+				</div>
+
+				<!--大图-->
+				<div class="col-md-6" id="row2">
+				    <div id="wrap">
+						<div class="box">
+							<div><img src="img/1：1/2.0.jpg" ></div>
+							<div><img src="img/1：1/2.1.jpg" ></div>
+							<div><img src="img/1：1/2.2.jpg" ></div>
+							<div><img src="img/1：1/2.3.jpg" ></div>
+							<div><img src="img/1：1/2.4.jpg" ></div>
+							<div><img src="img/1：1/2.5.jpg" ></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script>
+			window.onload = function() {
+				<!--换肤-->
+				var oSkin = document.getElementById("skin");
+				var oLi = oSkin.getElementsByTagName("li");
+				var oNav = document.getElementById("nav");
+				var oBody = document.body;
+				var oJum = document.getElementById("jum");
+
+
+				oLi[0].onclick = function() {
+					oBody.style.backgroundColor = '#F99';
+					oNav.style.backgroundColor = 'red';
+					oJum.style.backgroundColor = '#F99';
+				}
+
+				oLi[1].onclick = function() {
+					oBody.style.backgroundColor = '#A3C5A8';
+					oNav.style.backgroundColor = 'green';
+					oJum.style.backgroundColor = '#A3C5A8';
+				}
+
+				oLi[2].onclick = function() {
+					oBody.style.backgroundColor = '#D1D1D1';
+					oNav.style.backgroundColor = 'black';
+					oJum.style.backgroundColor = '#D1D1D1';
+				}
+
+
+				<!--2D画廊-->
+				var oRow1 = document.getElementById("row1");
+				var oRow2 = document.getElementById("row2");
+				var sImg = oRow1.getElementsByTagName("img");
+				var bImg = oRow2.getElementsByTagName("img")[0];
+				var arrImg = ['img/1：1/2.0.jpg', 'img/1：1/2.1.jpg', 'img/1：1/2.2.jpg', 'img/1：1/2.3.jpg', 'img/1：1/2.4.jpg',
+					'img/1：1/2.5.jpg', 'img/1：1/2.6.jpg'
+				];
+				var oBtn = document.getElementById("btn");
+
+				oBtn.onclick = function() {
+					
+					//问题--能够随机生成？--下次优化
+				//天女散花效果
+					sImg[0].style.left=300+"px";
+					sImg[0].style.top=172+"px";
+					sImg[1].style.left=145+"px";
+					sImg[1].style.top=159+"px";
+					sImg[2].style.left=45+"px";
+					sImg[2].style.top=280+"px";
+					sImg[3].style.left=-100+"px";
+					sImg[3].style.top=259+"px";
+					sImg[4].style.left=210+"px";
+					sImg[4].style.top=30+"px";
+					sImg[5].style.left=440+"px";
+					sImg[5].style.top=350+"px";
+					sImg[6].style.left=100+"px";
+					sImg[6].style.top=450+"px";
+					
+					
+					//定时器出现图片效果
+//						num = 0;
+// 					setInterval(f3, 1000);
+// 
+// 					function f3() {
+// 						sImg[num].style.display = 'block';
+// 						num++;
+// 						num = num % 7;
+// 					}
+				}
+
+
+				for (var i = 0; i < arrImg.length; i++) {
+					sImg[i].index = i;
+					sImg[i].onclick = function() {
+						bImg.src = arrImg[this.index];
+					}
+
+					sImg[i].onmouseover = function() {
+						this.style.transition = 3 + "s";
+						this.style.transform = "rotate(360deg) scale(1.5)";
+
+					}
+
+					sImg[i].onmouseout = function() {
+						this.style.transition = 3 + "s";
+						this.style.transform = "rotate(-360deg) scale(1)";
+					}
+
+
+					<!--图片拖拽*(为什么不能用索引值，拖拽所有的图片)-->
+					<!--第一张拖拽-->
+					sImg[0].onmousedown = function(ev) {
+						var ev = ev || event;
+
+						var disX = ev.clientX - this.offsetLeft;
+						var disY = ev.clientY - this.offsetTop;
+
+						if (sImg[0].setCapture) {
+							sImg[0].setCapture();
+						}
+
+						document.onmousemove = function(ev) {
+							var ev = ev || event;
+
+							sImg[0].style.left = ev.clientX - disX + 'px';
+							sImg[0].style.top = ev.clientY - disY + 'px';
+						}
+
+						document.onmouseup = function() {
+							document.onmousemove = document.onmouseup = null;
+							//释放全局捕获 releaseCapture();
+							if (sImg[0].releaseCapture) {
+								sImg[0].releaseCapture();
+							}
+						}
+
+						return false;
+
+					}
+					<!--分割线-->	
+					<!--第一张拖拽-->
+					sImg[1].onmousedown = function(ev) {
+						var ev = ev || event;
+
+						var disX = ev.clientX - this.offsetLeft;
+						var disY = ev.clientY - this.offsetTop;
+
+						if (sImg[1].setCapture) {
+							sImg[1].setCapture();
+						}
+
+						document.onmousemove = function(ev) {
+							var ev = ev || event;
+
+							sImg[1].style.left = ev.clientX - disX + 'px';
+							sImg[1].style.top = ev.clientY - disY + 'px';
+						}
+
+						document.onmouseup = function() {
+							document.onmousemove = document.onmouseup = null;
+							//释放全局捕获 releaseCapture();
+							if (sImg[1].releaseCapture) {
+								sImg[1].releaseCapture();
+							}
+						}
+
+						return false;
+
+					}
+					<!--分割线-->	
+					<!--第一张拖拽-->
+					sImg[2].onmousedown = function(ev) {
+						var ev = ev || event;
+
+						var disX = ev.clientX - this.offsetLeft;
+						var disY = ev.clientY - this.offsetTop;
+
+						if (sImg[2].setCapture) {
+							sImg[2].setCapture();
+						}
+
+						document.onmousemove = function(ev) {
+							var ev = ev || event;
+
+							sImg[2].style.left = ev.clientX - disX + 'px';
+							sImg[2].style.top = ev.clientY - disY + 'px';
+						}
+
+						document.onmouseup = function() {
+							document.onmousemove = document.onmouseup = null;
+							//释放全局捕获 releaseCapture();
+							if (sImg[2].releaseCapture) {
+								sImg[2].releaseCapture();
+							}
+						}
+
+						return false;
+
+					}
+					<!--分割线-->	
+					<!--第一张拖拽-->
+					sImg[3].onmousedown = function(ev) {
+						var ev = ev || event;
+
+						var disX = ev.clientX - this.offsetLeft;
+						var disY = ev.clientY - this.offsetTop;
+
+						if (sImg[3].setCapture) {
+							sImg[3].setCapture();
+						}
+
+						document.onmousemove = function(ev) {
+							var ev = ev || event;
+
+							sImg[3].style.left = ev.clientX - disX + 'px';
+							sImg[3].style.top = ev.clientY - disY + 'px';
+						}
+
+						document.onmouseup = function() {
+							document.onmousemove = document.onmouseup = null;
+							//释放全局捕获 releaseCapture();
+							if (sImg[3].releaseCapture) {
+								sImg[3].releaseCapture();
+							}
+						}
+
+						return false;
+
+					}
+					<!--分割线-->	
+					<!--第一张拖拽-->
+					sImg[4].onmousedown = function(ev) {
+						var ev = ev || event;
+
+						var disX = ev.clientX - this.offsetLeft;
+						var disY = ev.clientY - this.offsetTop;
+
+						if (sImg[4].setCapture) {
+							sImg[4].setCapture();
+						}
+
+						document.onmousemove = function(ev) {
+							var ev = ev || event;
+
+							sImg[4].style.left = ev.clientX - disX + 'px';
+							sImg[4].style.top = ev.clientY - disY + 'px';
+						}
+
+						document.onmouseup = function() {
+							document.onmousemove = document.onmouseup = null;
+							//释放全局捕获 releaseCapture();
+							if (sImg[4].releaseCapture) {
+								sImg[4].releaseCapture();
+							}
+						}
+
+						return false;
+
+					}
+					<!--分割线-->	
+					<!--第一张拖拽-->
+					sImg[5].onmousedown = function(ev) {
+						var ev = ev || event;
+
+						var disX = ev.clientX - this.offsetLeft;
+						var disY = ev.clientY - this.offsetTop;
+
+						if (sImg[5].setCapture) {
+							sImg[5].setCapture();
+						}
+
+						document.onmousemove = function(ev) {
+							var ev = ev || event;
+
+							sImg[5].style.left = ev.clientX - disX + 'px';
+							sImg[5].style.top = ev.clientY - disY + 'px';
+						}
+
+						document.onmouseup = function() {
+							document.onmousemove = document.onmouseup = null;
+							//释放全局捕获 releaseCapture();
+							if (sImg[5].releaseCapture) {
+								sImg[5].releaseCapture();
+							}
+						}
+
+						return false;
+
+					}
+					<!--分割线-->	
+					<!--第一张拖拽-->
+					sImg[6].onmousedown = function(ev) {
+						var ev = ev || event;
+
+						var disX = ev.clientX - this.offsetLeft;
+						var disY = ev.clientY - this.offsetTop;
+
+						if (sImg[6].setCapture) {
+							sImg[6].setCapture();
+						}
+
+						document.onmousemove = function(ev) {
+							var ev = ev || event;
+
+							sImg[6].style.left = ev.clientX - disX + 'px';
+							sImg[6].style.top = ev.clientY - disY + 'px';
+						}
+
+						document.onmouseup = function() {
+							document.onmousemove = document.onmouseup = null;
+							//释放全局捕获 releaseCapture();
+							if (sImg[6].releaseCapture) {
+								sImg[6].releaseCapture();
+							}
+						}
+
+						return false;
+
+					}
+					<!--分割线-->	
+
+
+				}
+			}
+		</script>
+	</body>
+</html>

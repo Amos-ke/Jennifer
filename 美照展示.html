@@ -1,0 +1,712 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>美照展示</title>
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+		<script src="lib/js/jquery-1.11.3.min.js"></script>
+		<script src="lib/js/bootstrap.min.js"></script>
+
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			/* #box {
+				width: 720px;
+				margin: 10px auto;
+			}
+
+			#container {
+				position: relative;
+				height: 555px;
+				background: #FCFCFC;
+			}
+
+			#container .item {
+				position: absolute;
+				top: 0;
+				left: 0px;
+				width: 380px;
+				height: 555px;
+			}
+
+			#container .item .pic {
+				float: left;
+				width: 350px;
+				height: 525px;
+				display: inline;
+				margin: 15px;
+			}
+
+			#container .item .pic #img {
+				width: 350px;
+				height: 525px;
+				position: absolute;
+				border: 1px solid #CCC;
+			}
+
+			/* #row1, */
+
+			#row3,
+			#row2 {
+				background: #333;
+			}
+
+			#row2 {
+				margin: 50px 0;
+			}
+
+
+			body {
+				font: 16px/1.5 Tahoma;
+				color: #000;
+			}
+
+			li {
+				list-style-type: none;
+			}
+
+			a:link,
+			a:visited {
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			#outer {
+				width: 470px;
+				margin: 0 auto;
+				overflow: hidden;
+				zoom: 1;
+			}
+
+			#skin,
+			#nav {
+				overflow: hidden;
+				zoom: 1;
+			}
+
+			#skin {
+				margin: 10px 0;
+			}
+
+			#skin li {
+				float: left;
+				width: 6px;
+				height: 6px;
+				cursor: pointer;
+				overflow: hidden;
+				margin-right: 10px;
+				text-indent: -9999px;
+				border-width: 14px;
+				border-style: solid;
+			}
+
+			#skin li.current {
+				background: #fff !important;
+			}
+
+			#red {
+				border-color: red;
+				background: red;
+			}
+
+			#green {
+				border-color: green;
+				background: green;
+			}
+
+			#black {
+				border-color: black;
+				background: black;
+			}
+
+			#nav {
+				border: 1px solid #fff;
+				background-color: green;
+				font-size:
+			}
+
+			#nav li {
+				line-height: 25px;
+				border-left: 1px solid #fff;
+			}
+
+			#nav li a {
+				color: #fff;
+			}
+
+			#nav li a:hover {
+				background-color: #FF4D4D;
+			}
+
+			#jum {
+				background: #FFF;
+			}
+
+
+
+
+			#imgList {
+				width: 865px;
+				overflow: hidden;
+				zoom: 1;
+				border: 1px solid #CCC;
+				margin: 0 auto;
+				padding: 0 0 10px 10px;
+				background: #eaeaea;
+			}
+
+			#imgList li {
+				float: left;
+				width: 150px;
+				height: 228px;
+				border: 1px solid #eaeaea;
+				;
+				margin: 10px 10px 0 0;
+			}
+
+			#imgList li img {
+				width: 150px;
+				height: 228px;
+				float: left;
+				opacity: 0.0;
+				cursor: crosshair;
+				filter: alpha(opacity=0);
+			}
+
+			#imgList li.current img {
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+
+
+
+
+			#imgList>img,
+			#row3 img {
+				width: 300px;
+				height: 530px;
+			}
+
+
+			.box {
+				width: 300px;
+				height: 530px;
+				float: left;
+				position: relative;
+				top: 0px;
+				left: 420px;
+				margin-right: 150px;
+			}
+
+			.box span {
+				width: 300px;
+				height: 30px;
+				line-height: 30px;
+				background-color: #000;
+				position: absolute;
+				color: #FFF;
+				text-align: center;
+
+			}
+
+			.box p {
+				width: 300px;
+				height: 30px;
+				line-height: 30px;
+				background-color: #000;
+				position: absolute;
+				top: 500px;
+				color: #FFF;
+				text-align: center;
+
+			}
+
+			.box ul {
+				position: absolute;
+				top: -8px;
+				right: -65px;
+
+			}
+
+			.box ul li {
+				list-style-type: none;
+				width: 40px;
+				height: 40px;
+				background-color: #999;
+				margin: 10px;
+
+			}
+
+
+			/* #automatic img {
+				width: 350px;
+				height: 220px;
+			}
+ */
+			#automatic {
+				width: 970px;
+				height: 344px;
+				position:relative;
+				margin: 10px auto;
+				/* overflow: hidden; */
+				/* border: #000000 1px solid; */
+			}
+			
+			#automatic ul {
+				width: 970px;
+				height: 344px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				/* border: #000000 6px solid; */
+				
+			}
+
+			#automatic li {	
+				position: absolute;
+			    margin: -50px 0 0 0;
+			}
+			
+			
+			/* #automatic .pos_0 {
+				top: 0;
+				left: -50px;
+				z-index: 1;
+				filter: alpha(opacity=0);
+				opacity: 0.1;
+				
+			} */
+
+			#automatic .pos_1{
+				top: 65px;
+				left: 0;
+				z-index: 2;
+				filter: alpha(opacity=60);
+				opacity: 0.6;
+				
+				
+			}
+
+			#automatic .pos_2 {
+				top: 35px;
+				left: 85px;
+				z-index: 3;
+				filter: alpha(opacity=80);
+				opacity: 0.8;
+				
+			}
+
+			#automatic .pos_3{
+				top: 0;
+				left:185px;
+				z-index: 4;
+				opacity: 1;
+				filter: alpha(opacity=100);
+				
+			}
+
+			#automatic .pos_4{
+				top: 35px;
+				left: 385px;
+				z-index: 3;
+				filter: alpha(opacity=80);
+				opacity: 0.8;
+				
+			}
+
+			#automatic .pos_5{
+				top: 65px;
+				left: 570px;
+				z-index: 2;
+				filter: alpha(opacity=60);
+				opacity: 0.6;
+				
+			}
+
+			/* #automatic .pos_6{
+				top: 0;
+				right: 250px;
+				z-index: 1;
+				filter: alpha(opacity=0);
+				opacity: 0.1;
+				
+			} */
+			
+			#automatic li img{
+				position: absolute;
+				
+			}
+
+			.prev_div .prev {
+				width: 76px;
+				height: 112px;
+				position: absolute;
+				top: 110px;
+				left: 0;
+				background-image: url(img/prev.png);
+				z-index: 4;
+
+			}
+
+			.next_div .next {
+				width: 76px;
+				height: 112px;
+				position: absolute;
+				top: 110px;
+				right: 0;
+				background-image: url(img/next.png);
+				z-index: 4;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<!--换肤、胶囊导航栏-->
+		<div class="container">
+			<div class="jumbotron" id="jum">
+				<div id="outer">
+					<ul id="skin">
+						<li id="red" title="红色" style="width:6px;height:6px;background:#FFF;">红</li>
+						<li id="green" class="current" title="绿色">绿</li>
+						<li id="black" title="黑色">黑</li>
+					</ul>
+
+					<ul id="nav" class="nav  nav-pills">
+						<li><a href="首页.html">首页</a></li>
+						<li><a href="基本信息.html">基本信息</a></li>
+						<li><a href="2D画廊.html">画廊幻灯片</a></li>
+						<li><a href="美照展示.html">畅畅美照</a></li>
+						<li><a href="I LOVE YOU效果（动态版，JS）.html">畅迷心声</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!--旋转轮播-->
+		<!-- <div class="row" id="row1">
+			<div id="box">
+
+				<div id="container">
+					<div class="item" id="item">
+						<div class="pic">
+							<img src="" id="img">
+							<img src="" id="img">
+							<img src="" id="img">
+							<img src="" id="img">
+							<img src="" id="img">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		<!-- 3D轮播效果 -->
+		<div id="automatic">
+
+			<div class="prev_div"><a herf="#"><span class="prev"> </span></a></div>
+
+			<div class="next_div"><a herf="#"><span class="next"> </span></a></div>
+
+			<ul id="ulIMG">
+				<!-- <li class="pos_0"><img src="img/首1.jpg" style="width: 340px;height: 220px;" /></li> -->
+				<li class="pos_1"><img src="img/首2.jpg" style="width: 400px;height: 260px;"/></li>
+				<li class="pos_2"><img src="img/首3.jpg" style="width: 500px;height: 320px;"/></li>
+				<li class="pos_3"><img src="img/首4.jpg" style="width: 600px;height: 390px;"/></li>
+				<li class="pos_4"><img src="img/首7.jpg" style="width: 500px;height: 320px;"/></li>
+				<li class="pos_5"><img src="img/首8.jpg" style="width: 400px;height: 260px;"/></li>
+				<!-- <li class="pos_6"><img src="img/4.4.jpg" style="width: 340px;height: 220px;"/></li> -->
+
+			</ul>
+
+		</div>
+
+
+		<!--橡皮擦：图片列表：鼠标移入/移出改变图片透明度-->
+		<div class="row" id="row2">
+			<ul id="imgList">
+				<li><img src="img/3.5.jpg" /></li>
+				<li><img src="img/3.6.jpg" /></li>
+				<li><img src="img/3.7.jpg" /></li>
+				<li><img src="img/3.8.jpg" /></li>
+				<li><img src="img/3.9.jpg" /></li>
+				<li><img src="img/4.0.jpg" /></li>
+				<li><img src="img/4.1.jpg" /></li>
+				<li><img src="img/4.2.jpg" /></li>
+				<li><img src="img/4.3.jpg" /></li>
+				<li><img src="img/4.4.jpg" /></li>
+			</ul>
+		</div>
+
+
+		<!--多组图片切换-->
+		<div class="row" id="row3">
+			<div id="pic1" class="box">
+				<span>页码正在加载中......</span>
+				<p>文字正在加载中......</p>
+				<img src="">
+
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+
+			<div id="pic2" class="box">
+				<span>页码正在加载中......</span>
+				<p>文字正在加载中......</p>
+				<img src="">
+
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+
+				</ul>
+			</div>
+		</div>
+
+
+<script src="move.js"></script>
+
+		<script>
+			<!--橡皮擦-->
+			var oRow = document.getElementById("row2");
+			var oLi = oRow.getElementsByTagName("li");
+			for (var i = 0; i < oLi.length; i++) {
+				oLi[i].onmouseover = function() {
+					this.className = "current";
+				};
+			}
+
+
+
+			<!--换肤-->
+			var oSkin = document.getElementById("skin");
+			var oLi = oSkin.getElementsByTagName("li");
+			var oNav = document.getElementById("nav");
+			var oBody = document.body;
+			var oJum = document.getElementById("jum");
+
+
+			oLi[0].onclick = function() {
+				oBody.style.backgroundColor = '#F99';
+				oNav.style.backgroundColor = 'red';
+				oJum.style.backgroundColor = '#F99';
+			}
+
+			oLi[1].onclick = function() {
+				oBody.style.backgroundColor = '#A3C5A8';
+				oNav.style.backgroundColor = 'green';
+				oJum.style.backgroundColor = '#A3C5A8';
+			}
+
+			oLi[2].onclick = function() {
+				oBody.style.backgroundColor = '#D1D1D1';
+				oNav.style.backgroundColor = 'black';
+				oJum.style.backgroundColor = '#D1D1D1';
+			}
+
+			// 3D轮播效果
+            var onPrevious=document.querySelector(".prev");
+			var onNext=document.querySelector(".next");
+			var aLi=document.querySelectorAll("#automatic>ul>li");
+			var onImg=document.querySelectorAll("#ulIMG img");
+			// alert(onImg[0].width);
+			var arr=[];
+                  
+			
+				for(var i=0;i<aLi.length;i++){
+					arr.push([parseInt(getStyle(aLi[i],"left")),parseInt(getStyle(aLi[i],"top")),getStyle(aLi[i],"zIndex"),getStyle(aLi[i],"opacity"),getStyle(onImg[i],"width"),getStyle(onImg[i],"height")])
+					// alert(onImg[1].width);	
+					// alert(arr[i]);
+					// console.dir(arr);
+					
+				}
+				// alert("2342");
+				
+				   //向左移动
+					onPrevious.onclick=function (){
+						
+						arr.unshift(arr[arr.length-1]);
+						arr.pop();
+						
+						
+						
+						//把重新排序的各种值放进去,再实现过渡效果
+						for(var i=0;i<aLi.length;i++){
+							aLi[i].style.top=arr[i][1]+"px";
+							aLi[i].style.left=arr[i][0]+"px";
+							aLi[i].style.zIndex=arr[i][2];
+							aLi[i].style.opacity=arr[i][3];
+							onImg[i].style.width=arr[i][4];
+							onImg[i].style.height=arr[i][5];
+							
+							aLi[i].style.transition=3+"s";
+							aLi[i].style.transitionProperty="top left opacity zIndex";
+							onImg[i].style.transition=3+"s";
+							onImg[i].style.transitionProperty="width height";
+							
+						}
+						
+			     }
+				        
+						//向右移动
+						onNext.onclick=function (){
+							//去把第一个放到最后，去掉第一个
+							arr.push(arr[0]);
+							arr.shift();
+							
+							for(var i=0;i<aLi.length;i++){
+								aLi[i].style.top=arr[i][1]+"px";
+								aLi[i].style.left=arr[i][0]+"px";
+								aLi[i].style.zIndex=arr[i][2];
+								aLi[i].style.opacity=arr[i][3];
+								onImg[i].style.width=arr[i][4];
+								onImg[i].style.height=arr[i][5];
+								
+								aLi[i].style.transition=3+"s";
+								aLi[i].style.transitionProperty="top left opacity zIndex";
+								onImg[i].style.transition=3+"s";
+								onImg[i].style.transitionProperty="width height";
+								}
+						}
+						
+						
+				   
+			
+			
+			function getStyle(obj,attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];
+				}
+				else{
+					return getComputedStyle(obj,false)[attr];
+				}
+			}
+			
+			
+			<!--旋转轮播-->
+			// 			var oItem = document.getElementById("item");
+			// 			var oImg = oItem.getElementsByTagName("img");
+			// 			var arrUrl = ['img/3.0.jpg', 'img/3.1.jpg', 'img/3.2.jpg', 'img/3.3.jpg', 'img/3.4.jpg'];
+			// 			var oShift = [0, 80, 208, 300, 370];
+			// 			var oZ = [2, 3, 4, 3, 2];
+			// 			var opacity = [0.3, 0.6, 1, 0.6, 0.3];
+			// 			var m = 0;
+			// 			var n = 4;
+			// 			var timer = null;
+			// 
+			// 
+			// 			setInterval(f1, 2000);
+			// 
+			// 			function f1() {
+			// 
+			// 
+			// 				oImg[m].src = arrUrl[m];
+			// 				oImg[m].style.left = oShift[n] + 'px';
+			// 				oImg[m].style.zIndex = oZ[n];
+			// 				oImg[m].style.opacity = opacity[n];
+			// 				m++;
+			// 				m = m % 5;
+			// 				n++;
+			// 				n = n % 5;
+			// 
+			// 				oImg[m].src = arrUrl[m];
+			// 				oImg[m].style.left = oShift[n] + 'px';
+			// 				oImg[m].style.zIndex = oZ[n];
+			// 				oImg[m].style.opacity = opacity[n];
+			// 				m++;
+			// 				m = m % 5;
+			// 				n++;
+			// 				n = n % 5;
+			// 
+			// 				oImg[m].src = arrUrl[m];
+			// 				oImg[m].style.left = oShift[n] + 'px';
+			// 				oImg[m].style.zIndex = oZ[n];
+			// 				oImg[m].style.opacity = opacity[n];
+			// 				m++;
+			// 				m = m % 5;
+			// 				n++;
+			// 				n = n % 5;
+			// 
+			// 				oImg[m].src = arrUrl[m];
+			// 				oImg[m].style.left = oShift[n] + 'px';
+			// 				oImg[m].style.zIndex = oZ[n];
+			// 				oImg[m].style.opacity = opacity[n];
+			// 				m++;
+			// 				m = m % 5;
+			// 				n++;
+			// 				n = n % 5;
+			// 
+			// 				oImg[m].src = arrUrl[m];
+			// 				oImg[m].style.left = oShift[n] + 'px';
+			// 				oImg[m].style.zIndex = oZ[n];
+			// 				oImg[m].style.opacity = opacity[n];
+			// 
+			// 				<!--初始化之后，第二次旋转每一张图片出现的位置是什么？对于的left值、透明度、z-index分别是什么？先确定是用2个变量实现，再设计m、n的值，使其重复执行不发生错误。（难点）-->
+			// 				m = 0;
+			// 
+			// 			}
+		</script>
+
+</body>
+</html>
+	
+
+<script>
+	window.onload = function() {
+		<!--注意：不能同时把“加载多组图片”和“图片轮播”放在window.onload中，否则会显示不了轮播-->
+		<!--多组图片-->
+		f1("pic1", ['img/1.4.jpg', 'img/1.5.jpg', 'img/1.6.jpg', 'img/1.3.jpg'], ['第一张', '第二张', '第三张', '第四张'], "onclick");
+		f1("pic2", ['img/1.0.jpg', 'img/1.1.jpg', 'img/1.2.jpg'], ['第一张', '第二张', '第三张'], "onmouseover");
+
+		function f1(a, arrUrl, zh, evt) {
+			var oDiv = document.getElementById(a);
+			var oLi = oDiv.getElementsByTagName('li');
+			var oImg = oDiv.getElementsByTagName("img")[0];
+			var oSpan = oDiv.getElementsByTagName("span")[0];
+			var oP = oDiv.getElementsByTagName("p")[0];
+
+			var num = 0;
+
+			abc();
+
+			function abc() {
+				oSpan.innerHTML = num + 1 + "/" + arrUrl.length;
+				oP.innerHTML = zh[0];
+				oImg.src = arrUrl[0];
+				oLi[num].style.background = 'yellow';
+			}
+
+
+			for (var i = 0; i < zh.length; i++) {
+				oLi[i].index = i;
+				oLi[i][evt] = function() {
+					oSpan.innerHTML = this.index + 1 + "/" + arrUrl.length;
+					oP.innerHTML = zh[this.index];
+					oImg.src = arrUrl[this.index];
+
+					for (var j = 0; j < zh.length; j++) {
+						oLi[j].style.background = '';
+					}
+
+					oLi[this.index].style.background = 'yellow';
+
+				}
+			}
+
+		}
+	}
+</script>
